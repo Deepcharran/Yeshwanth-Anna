@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAG Audit Report</title>
+<link rel = "icon" href ="images/cag_logo.jpg" type = "image/x-icon" style="mix-blend-mode: multiply;"> 
+<style>
+  
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+    max-width: 100%;
+    /* height: 100px; */
+}
+
+#header.active {
+    box-shadow: 0 0 20px 0 
+    rgba(0, 0, 0, 0.2);
+}
+
+#header .main-header {
+    background-color: 
+    rgba(230, 239, 246, 1);
+    padding: 10px 0;
+    position: relative;
+    z-index: 100;
+    /* height: 80px; */
+}
+
+#header .main-header .container {
+    max-width: 1600px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /* height: 80px; */
+}
+
+.subcontainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /* height: 80px; */
+}
+
+#header .header-nav {
+    /* margin: 0 -30px;
+    padding: 0;
+    list-style: none;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex; */
+    width: auto;
+    display: block;
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color:
+    black;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* .headingline{
+    width: auto;
+    display: block;
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color:black;
+    text-align: center;
+    line-height: 40px;
+} */
+
+.introdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top: 10rem;
+}
+
+.introcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.orgdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.orgcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audobjdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audobjcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audcridiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audcricontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+.audcripoicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 10px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audevidiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audevicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+.audevipoicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 10px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+/* .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -10rem;
+} */
+
+.justify-content-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.col-auto {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.min-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.min-gutters > [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body {
+    font: 400 18px/1.5 'Circular', sans-serif;
+    color: 
+    #000;
+}
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.header-logo {
+    width: 60px;
+}
+
+#header .header-nav li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: 
+    #0e324a;
+}
+
+.headersection {
+    position: relative;
+    z-index: 100;
+    /* background-color: 
+    #e6eff6; */
+    overflow: hidden;
+    padding-top: 120px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 70px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+#header .header-wrapper {
+    border-bottom: 1px solid 
+    #b7c6d1;
+    position: static;
+}
+
+.mt-3, .my-3 {
+margin-top: 1rem !important;
+}
+
+.align-items-center {
+
+-webkit-box-align: center !important;
+-ms-flex-align: center !important;
+align-items: center !important;
+
+}
+
+.justify-content-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+
+.mt-3, .my-3 {
+
+margin-top: 1rem !important;
+
+}
+.align-items-center {
+
+-webkit-box-align: center !important;
+-ms-flex-align: center !important;
+align-items: center !important;
+
+}
+.justify-content-between {
+
+-webkit-box-pack: justify !important;
+-ms-flex-pack: justify !important;
+justify-content: space-between !important;
+
+}
+.d-lg-none {
+
+display: none !important;
+
+}
+.row {
+
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+margin-right: -15px;
+margin-left: -5rem;
+
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height:80%;
+  /* z-index: 10; */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  /* z-index: 10; */
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  /* z-index: 10; */
+}
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: #0e324a;
+    /* z-index: 10; */
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    height:80%;
+}
+
+.table-responsive > .table-bordered {
+    border: 0;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+/* #mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  margin-top:100px;
+  height:auto;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#intro {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#organ {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#obj {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#cri {
+  top: 200px;
+  background-color: #555
+}
+
+#evi {
+  top: 200px;
+  background-color: rgb(14, 4, 112)
+} */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.1s;
+  /* margin-top: 100px; */
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: relative;
+  top: 0;
+  /* right: 25px; */
+  font-size: 36px;
+  /* margin-left: 50px; */
+}
+
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+</style>
+<body bgcolor="#e6eef6">
+<section id="header" class="active">
+    <div class="main-header">
+        <div class="container">
+        
+            <div class="row justify-content-around align-items-center">
+                    <!-- <section class="navsec" style="margin-top:50px; overflow:visible;"> -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="intro.html">Introduction</a>
+            <a href="organ.html">Organisational Set Up</a>
+            <a href="audobj.html">Audit Objective</a>
+            <a href="audcri.html">Audit Criteria</a>
+            <a href="audev.html">Audit Evidence</a>
+        </div>
+          
+          <!-- <h2>Animated Sidenav Example</h2>
+          <p>Click on the element below to open the side navigation menu.</p> -->
+          <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+          
+          <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <!-- </section> -->
+                <div class="col-auto">
+                        <div class="row min-gutters align-items-center">
+                            <div class="col-auto">
+                                <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English.php" ><img src="images/cag_logo.jpg" class="img-fluid header-logo"></a>
+                            </div>
+                            <div class="col-auto">
+                                <p class="m-0 report-year" ><a href="homepage.html" style="text-decoration: none; color: inherit; ">Audit Report</a></p>
+                            </div>
+                        </div>
+                    <!-- </a> -->
+                </div>
+                <div class="col-auto header-wrapper">
+                    <div class="row mt-3 d-lg-none justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="close-menu pr-4">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="header-nav">
+                        <p>Revenue billing and Collection efficiency in DISCOMs</p>
+                        <!-- <li>
+                        <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/preface.php">Preface</a><li></li>
+                        <li>
+                            <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/executive-summary.php">Executive summary</a></li>
+                        <li>
+                            <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/recommendations.php">Recommendations</a></li>
+                        <li>
+                            <button id="myBtn" style="margin-top: 1.5em;">Glossary</button>
+                        </li> -->
+                
+                        <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>AFS</td>
+                                    <td>Air Freight Station</td>
+                                </tr>
+                                <tr>
+                                    <td>ASIDE</td>
+                                    <td>Assistance to States for Developing Export Infrastructure and Allied Activities</td>
+                                </tr>
+                                <tr>
+                                    <td>BE</td>
+                                    <td>Bill of Entry</td>
+                                </tr>
+                                <tr>
+                                    <td>BG</td>
+                                    <td>Bank Guarantee</td>
+                                </tr>
+                                <tr>
+                                    <td>BIS</td>
+                                    <td>Bureau of Indian Standards</td>
+                                </tr>
+                                <tr>
+                                    <td>CAG</td>
+                                    <td>Comptroller &amp; Auditor General</td>
+                                </tr>
+                                <tr>
+                                    <td>CBEC</td>
+                                    <td>Central Board of Excise and Customs</td>
+                                </tr>
+                                <tr>
+                                    <td>CBIC</td>
+                                    <td>Central Board of Indirect Taxes and Customs</td>
+                                </tr>
+                                <tr>
+                                    <td>CCSP</td>
+                                    <td>Customs Cargo Service Providers</td>
+                                </tr>
+                                <tr>
+                                    <td>CFS</td>
+                                    <td>Container Freight Station</td>
+                                </tr>
+                                <tr>
+                                    <td>CMFC</td>
+                                    <td>Container Movement Facilitation Cell</td>
+                                </tr>
+                                <tr>
+                                    <td>CRC</td>
+                                    <td>Cost Recovery Charges</td>
+                                </tr>
+                                <tr>
+                                    <td>CRCL</td>
+                                    <td>Central Revenue Control Laboratory</td>
+                                </tr>
+                                <tr>
+                                    <td>CWC</td>
+                                    <td>Central Warehousing Corporation</td>
+                                </tr>
+                                <tr>
+                                    <td>DGFT</td>
+                                    <td>Director General of Foreign Trade</td>
+                                </tr>
+                                <tr>
+                                    <td>DoC</td>
+                                    <td>Department of Commerce</td>
+                                </tr>
+                                <tr>
+                                    <td>DoR</td>
+                                    <td>Department of Revenue</td>
+                                </tr>
+                                <tr>
+                                    <td>DPD</td>
+                                    <td>Direct Port Delivery</td>
+                                </tr>
+                                <tr>
+                                    <td>EDI</td>
+                                    <td>Electronic Data Interchange</td>
+                                </tr>
+                                <tr>
+                                    <td>EGM</td>
+                                    <td>Export General Manifest</td>
+                                </tr>
+                                <tr>
+                                    <td>ETM</td>
+                                    <td>Export Transhipment Module</td>
+                                </tr>
+                                <tr>
+                                    <td>ETP</td>
+                                    <td>Export Transhipment Permit</td>
+                                </tr>
+                                <tr>
+                                    <td>FEMA</td>
+                                    <td>Foreign Exchange Management Act</td>
+                                </tr>
+                                <tr>
+                                    <td>FSSAI</td>
+                                    <td>Food Safety and Standards Authority of India</td>
+                                </tr>
+                                <tr>
+                                    <td>FTP</td>
+                                    <td>Foreign Trade Policy</td>
+                                </tr>
+                                <tr>
+                                    <td>FY</td>
+                                    <td>Financial Year</td>
+                                </tr>
+                                <tr>
+                                    <td>HCCAR</td>
+                                    <td>Handling of Cargo in Customs Areas Regulations</td>
+                                </tr>
+                                <tr>
+                                    <td>HDC</td>
+                                    <td>Haldia Dock Complex</td>
+                                </tr>
+                                <tr>
+                                    <td>HRD</td>
+                                    <td>Human Resources Development</td>
+                                </tr>
+                                <tr>
+                                    <td>HSS</td>
+                                    <td>High Sea Sale</td>
+                                </tr>
+                                <tr>
+                                    <td>ICD</td>
+                                    <td>Inland Container Depot</td>
+                                </tr>
+                                <tr>
+                                    <td>ICEGATE</td>
+                                    <td>Indian Customs Electronic Commerce/Electronic Data Interchange Gateway</td>
+                                </tr>
+                                <tr>
+                                    <td>ICES</td>
+                                    <td>Indian Customs EDI System</td>
+                                </tr>
+                                <tr>
+                                    <td>ICTT</td>
+                                    <td>International Container Transhipment Terminal</td>
+                                </tr>
+                                <tr>
+                                    <td>IMC</td>
+                                    <td>Inter-Ministerial Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>IQS</td>
+                                    <td>Indian Quality Standards</td>
+                                </tr>
+                                <tr>
+                                    <td>IS</td>
+                                    <td>Information System</td>
+                                </tr>
+                                <tr>
+                                    <td>ITC</td>
+                                    <td>Indian Trade Classification</td>
+                                </tr>
+                                <tr>
+                                    <td>ITM</td>
+                                    <td>Import Transhipment Module</td>
+                                </tr>
+                                <tr>
+                                    <td>J&amp;K</td>
+                                    <td>Jammu and Kashmir</td>
+                                </tr>
+                                <tr>
+                                    <td>JNCH</td>
+                                    <td>Jawaharlal Nehru Custom House</td>
+                                </tr>
+                                <tr>
+                                    <td>KINFRA</td>
+                                    <td>Kerala Industrial Infrastructure Development Corporation</td>
+                                </tr>
+                                <tr>
+                                    <td>LCL</td>
+                                    <td>Less than Container Load</td>
+                                </tr>
+                                <tr>
+                                    <td>LEO</td>
+                                    <td>Let Export Order</td>
+                                </tr>
+                                <tr>
+                                    <td>LoI</td>
+                                    <td>Letter of Intent</td>
+                                </tr>
+                                <tr>
+                                    <td>LRM</td>
+                                    <td>Local Risk Management</td>
+                                </tr>
+                                <tr>
+                                    <td>MoCI</td>
+                                    <td>Ministry of Commerce and Industry</td>
+                                </tr>
+                                <tr>
+                                    <td>MOEF</td>
+                                    <td>Ministry of Environment and Forest</td>
+                                </tr>
+                                <tr>
+                                    <td>MoR</td>
+                                    <td>Ministry of Railway</td>
+                                </tr>
+                                <tr>
+                                    <td>MoS</td>
+                                    <td>Ministry of Shipping</td>
+                                </tr>
+                                <tr>
+                                    <td>MOT</td>
+                                    <td>Merchant Overtime</td>
+                                </tr>
+                                <tr>
+                                    <td>MP</td>
+                                    <td>Madhya Pradesh</td>
+                                </tr>
+                                <tr>
+                                    <td>NER</td>
+                                    <td>North Eastern Region</td>
+                                </tr>
+                                <tr>
+                                    <td>NOC</td>
+                                    <td>No Objection Certificate</td>
+                                </tr>
+                                <tr>
+                                    <td>OIO</td>
+                                    <td>Orders-In-Original</td>
+                                </tr>
+                                <tr>
+                                    <td>OOC</td>
+                                    <td>Out of Charge</td>
+                                </tr>
+                                <tr>
+                                    <td>PAC</td>
+                                    <td>Public Accounts Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>PCA</td>
+                                    <td>Post Clearance Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>PCB</td>
+                                    <td>Pollution Control Board</td>
+                                </tr>
+                                <tr>
+                                    <td>PGA</td>
+                                    <td>Participating Government Agencies</td>
+                                </tr>
+                                <tr>
+                                    <td>PHO</td>
+                                    <td>Port Health Officer</td>
+                                </tr>
+                                <tr>
+                                    <td>PQ</td>
+                                    <td>Plant Quarantine</td>
+                                </tr>
+                                <tr>
+                                    <td>PSIC</td>
+                                    <td>Pre-Shipment Inspection Certificate</td>
+                                </tr>
+                                <tr>
+                                    <td>PWC</td>
+                                    <td>Punjab Warehousing Corporation</td>
+                                </tr>
+                                <tr>
+                                    <td>QPR</td>
+                                    <td>Quarterly Progress Report</td>
+                                </tr>
+                                <tr>
+                                    <td>RBI</td>
+                                    <td>Reserve Bank of India</td>
+                                </tr>
+                                <tr>
+                                    <td>RBI_XOS</td>
+                                    <td>Reserve Bank of India Foreign Exchange Outstanding Statement</td>
+                                </tr>
+                                <tr>
+                                    <td>RMD</td>
+                                    <td>Risk Management Division</td>
+                                </tr>
+                                <tr>
+                                    <td>RMS</td>
+                                    <td>Risk Management System</td>
+                                </tr>
+                                <tr>
+                                    <td>SEZ</td>
+                                    <td>Special Economic Zone</td>
+                                </tr>
+                                <tr>
+                                    <td>SB</td>
+                                    <td>Shipping Bill</td>
+                                </tr>
+                                <tr>
+                                    <td>SDC</td>
+                                    <td>Special Disposal Cell</td>
+                                </tr>
+                                <tr>
+                                    <td>SIIB</td>
+                                    <td>Special Intelligence and Investigation Branch</td>
+                                </tr>
+                                <tr>
+                                    <td>TEU</td>
+                                    <td>Twenty-foot Equivalent Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>TNPCB</td>
+                                    <td>Tamil Nadu Pollution Control Board</td>
+                                </tr>
+                                <tr>
+                                    <td>UCC</td>
+                                    <td>Uncleared Cargo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                </div>
+                
+                <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                    modal.style.display = "none";
+                    }
+                }
+                </script>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <div class="row min-gutters align-items-center justify-content-end">
+                        <!-- <div class="col-auto search-button-wrap">
+                            <div class="toggle-menu d-lg-none">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="d-none d-lg-block">
+                                <a href="javascript:" class="search-button button-light">Search</a>
+                                <ul class="search-dropdown">
+                                    <li><a href="English/commissionerates.php">Commissionerates</a></li>
+                                    <li><a href="English/states.php">States</a></li>
+                                    <li><a href="English/icds.php">ICDs</a></li>
+                                    <li><a href="English/cfss.php">CFSs</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-auto">
+                            <a href="download/english_version.zip" download="Report No. 16 of 2018 (Performance Audit).zip" class="download-pdf tooltip-wrap" data-toggle="tooltip" title="" data-original-title="Download Report">
+                                <img src="English/images/pdf.svg" class="img-fluid ">
+                            </a>
+                        </div> -->
+                        <div class="col-auto">
+                            <img src="images/india_emblem.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div id="mySidenav" class="sidenav">
+    <a href="#" id="intro">Chapter 1</a>
+    <a href="#" id="organ">Chapter 2</a>
+    <a href="#" id="obj">Chapter 3</a>
+    <a href="#" id="cri">Chapter 4</a>
+    <a href="#" id="evi">Chapter 5</a>
+</div> -->
+<!-- <section>  
+    <nav>
+        <button id="sidenav-toggle"><img alt="Hamburger" src="images/hamburger.png"></button>
+        </nav>        
+<div class="ct-sidenav">
+	<button class="close">x</button><img alt="Logo" class="ct-sidenav-logo" src="images/logo.png">
+	 <ul class="list-unstyled ct-sidenav-list">
+		<li>
+			<a href="#">Introduction</a>
+		</li>
+		<li>
+			<a href="#">Organizational Set Up</a>
+		</li>
+		<li>
+			<a href="#">Audit Objective</a>
+		</li>           
+		<li>
+			<a href="#">Audit Criteria</a>
+		</li>
+
+	</ul>
+	<div class="inner">
+		<div class="separator"></div>
+		<div class="address">
+			<span>123 Easy Street</span><span>Orlando, FL 32801</span>
+		</div> 
+		<div class="ct-footer-header">
+			Join Us
+		</div>
+		<ul class="ct-socials list-inline list-unstyled">
+			<li class="ct-socials--facebook">
+				<a href="//www.facebook.com/"><img alt="Facebook" src="images/facebook.png"></a>
+			</li>
+			<li class="ct-socials--linkedin">
+				<a href="//www.linkedin.com/"><img alt="Linkedin" src="images/linkedin.png"></a>
+			</li>
+			<li class="ct-socials--twitter">
+				<a href="//www.twitter.com/"><img alt="Twitter" src="images/twitter.png"></a>
+			</li>
+		</ul>
+		<div class="ct-u-paddingTop60"></div>
+	</div>
+</div>  
+</section> -->
+
+<!-- <section class="headersection">
+    <div class="headingline">
+        <p>Revenue billing and </p>
+        <p>Collection efficiency in DISCOMs</p>
+    </div>
+</section> -->
+<section class="introductionsection">
+    <div class="introdiv">
+        <p>Introduction</p>
+    </div>
+    <div class="introcontdiv">
+        <p>Consequent upon the unbundling of the erstwhile Madhya Pradesh State Electricity Board (MPSEB), the three Power Distribution Companies (Discoms), viz. Madhya Pradesh Madhya Kshetra Vidyut Vitaran Company Limited (MPMKVVCL), Madhya Pradesh Poorva Kshetra Vidyut Vitaran Company Limited (MPPoKVVCL) and Madhya Pradesh Paschim Kshetra Vidyut Vitaran Company Limited (MPPaKVVCL) were incorporated (May 2002) and entrusted with the activity of power distribution in the State of Madhya Pradesh.</p>
+
+        <p>To achieve the objective of providing reliable and quality power for agriculture, households and industries at competitive rates, Discoms need to be financially sustainable and commercially viable.</p>
+    </div>
+</section>
+<section class="orgsection">
+    <div class="orgdiv">
+        <p>Organisational set up</p>
+    </div>
+    <div class="orgcontdiv">
+        <p>All three Discoms are under the administrative control of the Department of Energy, Government of Madhya Pradesh (GoMP). Each Discom is headed by a Managing Director (MD) and day-to-day activities of the field units of these Discoms are monitored by Chief General Managers (CGM) at Corporate Office.</p>
+    </div>
+</section>
+<section class="audobjsection">
+    <div class="audobjdiv">
+        <p>Audit objective</p>
+    </div>
+    <div class="audobjcontdiv">
+        <p>The compliance audit was conducted with an objective to assess whether:
+            <li>The reporting of Billing and Collection (B&C) efficiency was done as per the prescribed Rules and accurately; and</li>
+            <li>Billing and Collection of revenue was being done as per provisions of Electricity Supply Code and applicable Tariff Orders from time-to-time.</li>
+        </p>
+    </div>
+</section>
+<section class="audcrisection">
+    <div class="audcridiv">
+        <p>Audit Criteria</p>
+    </div>
+    <div class="audcricontdiv">
+        <p>The criteria adopted for audit were derived from the following sources:
+            <li>The Electricity Act, 2003 and Madhya Pradesh Electricity Supply Code  2013 (Supply Code);</li>
+            <li>Retail Supply Tariff Orders (Tariff Orders) issued by Madhya Pradesh Electricity Regulatory Commission (MPERC) from time to time;</li>
+            <li> Agenda and Minutes of Meetings of Board of Directors (Board) of the Discoms;</li>
+            <li>Circulars/ orders issued by CGM (Commercial) at Corporate Office; and</li>
+            <li>Orders/ Guidelines/ Circulars/ Instructions issued by the Department, GoMP and MPERC.</li>
+        </p>
+        <p><em><strong>Failure in achieving the target of billing efficiency fixed by MPERC</strong></em></p>
+        <p> As stated in Para 2.2.6 above, all the Discoms registered the distribution losses over and above the targets fixed by MPERC. The excess losses 
+            ranged between 6.63 to 20.23 per cent in MPMKVVCL, 4.61 to 14.56 per cent in MPPoKVVCL and 1.09 to 1.87 per cent in MPPaKVVCL during 2016-17 to 
+            2018-19<strong(Annexure 1).></strong></p> 
+        <p>Out of the 15 selected field units, 12[1] field offices failed to reduce the distribution losses up to the target levels fixed
+             by MPERC<strong>(Annexure 3).</strong></p> 
+        <p>Thus, failure of the Discoms in complying with the losses’ trajectory level fixed by MPERC resulted in loss of ` 5,308.27 crore (MPMKVVCL- ` 2,741.99 crore, MPPoKVVCL- ` 1983.34 crore and MPPaKVVCL- ` 582.94 crore) during 2016-17 to 2018-19 in respect of 12 selected field units<strong>(Annexure 3).</strong>Audit in the selected 15 field units observed that billing efficiency was low mainly due to the following reasons:</p>
+        <li><strong>Shortfall in meterisation:</strong>Despite directives issued (2016) by MPERC for 100 per cent meterisation of Distribution Transformers (DTRs)[1], 78.13 per cent[2] were not metered and 57.31 per cent[3] of the metered DTRs were lying defective <strong>(Annexure 4)</strong> as of 31st March 2019;</li>
+        <li><strong>AMR based meter reading:</strong> Automatic Meter Reading (AMR) based meter reading is an important tool for increasing billing efficiency. However, 36.11 per cent LT high value consumers[4]<strong>(Annexure 5)</strong> were not being billed (March 2019)  using AMR either due to absence of AMR enabled meters or installation of meters without modem[5]; and</li>
+        <li><strong>Capacitor Banks (CBs): </strong>These are the equipments installed at the sub-stations (SSs) to save energy and minimise distribution loss. CBs were not installed in 384 SSs out of total 1,565 SSs in 15 selected field units <strong>(Annexure 6)</strong>. Had the CBs been installed, the Discoms could have saved 2181.89 MUs[6] in a year only.
+            In addition to these deficiencies, the field units of the Discoms also failed to take up the other elements required for increasing billing efficiency which are discussed in Para 2.2.11 and 2.2.12. </li>
+
+    </div>
+    <!-- <div class="audcripoicontdiv">
+            <p>[1] MPMKVVCL (Corporate Office at Bhopal) serves the districts of Bhopal, Hoshangabad, Harda,  Vidisha, Raisen,  Sehore, Rajgarh, Betul, Gwalior, Datia, Bhind, Morena, Sheopur, Guna, Ashoknagar and Shivpuri.</p>
+
+            <p>[2] MPPoKVVCL (Corporate Office at Jabalpur) serves the districts of Jabalpur, Seoni, Narsinghpur, Mandla, Umaria, Balaghat, Dindori  Katni, Chhindwara, Sagar, Damoh, Tikamgarh, Niwari,  Chhatrapur, Panna,  Sidhi, Singrauli,  Shahdol, Anuppur,  Rewa and Satna.</p>
+
+            <p>[3] MPPaKVVCL (Corporate Office  at Indore) serves the districts of Indore, Burhanpur, Alirajpur,  Khargone, Khandwa, Dewas, Dhar, Jhabua, Ujjain, Barwani, Shajapur, Mandsaur, Neemuch, Agar and Ratlam.</p>
+
+            <p>[4] All three Discoms were created as 100 per cent subsidiaries of Madhya Pradesh Power Management Company Limited.</p>
+
+            <p>[5] Field units are the Circle Office headed by Superintending Engineer and its Implementing Divisions headed by Divisional Engineers.</p>
+        
+    </div> -->
+</section>
+<section class="audevisection">
+    <div class="audevidiv">
+        <p>Audit Evidence</p>
+    </div>
+    <div class="audevicontdiv">
+        <p>Tableau</p>
+    </div>
+    <!-- <div class="audevipoicontdiv">
+            <p>[1] MPMKVVCL: Hoshangabad, Betul, Gwalior, Sheopur and Rajgarh;</p>
+
+            <p>MPPooKVVCL: Satna, Rewa, Katni and Chhatarpur; and</p>
+
+            <p>MPPaKVVCL: Shajapur, Barwani and Khargone.</p>
+
+    </div> -->
+    <!-- <div class="audevipoicontdiv">
+        <p>[1]  Metersiation for DTRs is required for energy audit as well as to identify areas of distribution losses and   theft of energy.</p>
+
+        <p>[2]   2,16,620 DTRs out of 2,77,249 DTRs.</p>
+
+        <p>[3]   34,749 DTRs out of 60629 metered DTRs.</p>
+
+        <p>[4]  13,652 out of total 37,809 LT consumer having load more than 10 KW.</p>
+
+        <p>[5]     A device which enables communication of reading at remote server from meter installed at consumer’s premises.</p>
+        
+        <p>[6]     576 MVAR (576000 KVAR) (total capacity of Annexure-6)*3.788 MUs (As one MVAR of CB saves 3.788 MUs on average basis in a year)=2181.89 MUs.</p>
+
+    </div> -->
+</section>
+
+
+</body>
+</html>

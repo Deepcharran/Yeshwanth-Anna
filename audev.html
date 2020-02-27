@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAG Audit Report</title>
+<link rel = "icon" href ="images/cag_logo.jpg" type = "image/x-icon" style="mix-blend-mode: multiply;"> 
+<style>
+  
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+    max-width: 100%;
+    /* height: 100px; */
+}
+
+#header.active {
+    box-shadow: 0 0 20px 0 
+    rgba(0, 0, 0, 0.2);
+}
+
+#header .main-header {
+    background-color: 
+    rgba(230, 239, 246, 1);
+    padding: 10px 0;
+    position: relative;
+    z-index: 100;
+    /* height: 80px; */
+}
+
+#header .main-header .container {
+    max-width: 1600px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /* height: 80px; */
+}
+
+.subcontainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /* height: 80px; */
+}
+
+#header .header-nav {
+    /* margin: 0 -30px;
+    padding: 0;
+    list-style: none;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex; */
+    width: auto;
+    display: block;
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color:
+    black;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* .headingline{
+    width: auto;
+    display: block;
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color:black;
+    text-align: center;
+    line-height: 40px;
+} */
+
+.introdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top: 10rem;
+}
+
+.introcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.orgdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top:10rem;
+}
+
+.orgcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audobjdiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top:10rem;
+
+}
+
+.audobjcontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+
+.audcridiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top:10rem;
+
+}
+
+.audcricontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+.audcripoicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 10px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top:10rem;
+
+}
+
+.audevidiv{
+    width:auto;
+    display: block; 
+    font-family: Segoe UI Symbol; 
+    font-size: 27px;
+    font-weight:500;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+    margin-top:10rem;
+
+}
+
+.audevicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 15px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left; 
+}
+.audevipoicontdiv{
+    width:auto;
+    display: block; 
+    font-family: Apple Color Emoji; 
+    font-size: 10px;
+    font-weight:400;
+    color:black;
+    text-align: left;
+    line-height: 20px; 
+    margin-left:5%;
+    text-align: left;
+    margin-top:10rem;
+
+}
+
+.justify-content-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.col-auto {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.min-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.min-gutters > [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body {
+    font: 400 18px/1.5 'Circular', sans-serif;
+    color: 
+    #000;
+}
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.header-logo {
+    width: 60px;
+}
+
+#header .header-nav li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: 
+    #0e324a;
+}
+
+.headersection {
+    position: relative;
+    z-index: 100;
+    /* background-color: 
+    #e6eff6; */
+    overflow: hidden;
+    padding-top: 120px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 70px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+#header .header-wrapper {
+    border-bottom: 1px solid 
+    #b7c6d1;
+    position: static;
+}
+
+.mt-3, .my-3 {
+margin-top: 1rem !important;
+}
+
+.align-items-center {
+
+-webkit-box-align: center !important;
+-ms-flex-align: center !important;
+align-items: center !important;
+
+}
+
+.justify-content-between {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+
+.mt-3, .my-3 {
+
+margin-top: 1rem !important;
+
+}
+.align-items-center {
+
+-webkit-box-align: center !important;
+-ms-flex-align: center !important;
+align-items: center !important;
+
+}
+.justify-content-between {
+
+-webkit-box-pack: justify !important;
+-ms-flex-pack: justify !important;
+justify-content: space-between !important;
+
+}
+.d-lg-none {
+
+display: none !important;
+
+}
+.row {
+
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+margin-right: -15px;
+margin-left: -3rem;
+
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height:80%;
+  /* z-index: 10; */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  /* z-index: 10; */
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  /* z-index: 10; */
+}
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: #0e324a;
+    /* z-index: 10; */
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    height:80%;
+}
+
+.table-responsive > .table-bordered {
+    border: 0;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.1s;
+  /* margin-top: 100px; */
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: relative;
+  top: 0;
+  /* right: 25px; */
+  font-size: 36px;
+  /* margin-left: 50px; */
+}
+
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+</style>
+<body bgcolor="#e6eef6">
+    <section id="header" class="active">
+        <div class="main-header">
+            <div class="container">
+            
+                <div class="row justify-content-around align-items-center">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="intro.html">Introduction</a>
+                    <a href="organ.html">Organisational Set Up</a>
+                    <a href="audobj.html">Audit Objective</a>
+                    <a href="audcri.html">Audit Criteria</a>
+                    <a href="audev.html">Audit Evidence</a>
+                </div>
+                    
+              
+              <!-- <h2>Animated Sidenav Example</h2>
+              <p>Click on the element below to open the side navigation menu.</p> -->
+              <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+              
+              <script>
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+              }
+              
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+              }
+              </script>
+                    <div class="col-auto">
+                            <div class="row min-gutters align-items-center">
+                                <div class="col-auto">
+                                    <a href="homepage.html" ><img src="images/cag_logo.jpg" class="img-fluid header-logo"></a>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="m-0 report-year" ><a href="homepage.html" style="text-decoration: none; color: inherit; ">Audit Report</a></p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-auto header-wrapper">
+                        <div class="row mt-3 d-lg-none justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <div class="close-menu pr-4">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="header-nav">
+                            <p>Revenue billing and Collection efficiency in DISCOMs</p>
+                            <!-- <li>
+                            <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/preface.php">Preface</a><li></li>
+                            <li>
+                                <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/executive-summary.php">Executive summary</a></li>
+                            <li>
+                                <a href="https://cedar.gov.in/AR16-2018-PA-Customs-Union/English/recommendations.php">Recommendations</a></li>
+                            <li>
+                                <button id="myBtn" style="margin-top: 1.5em;">Glossary</button>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="col-auto">
+                        <div class="row min-gutters align-items-center justify-content-end">
+                            <div class="col-auto">
+                                <img src="images/india_emblem.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="audevisection">
+        <div class="audevidiv">
+            <p>Audit Evidence</p>
+        </div>
+        <div class="audevicontdiv">
+            <p>Tableau</p>
+        </div>
+    
+    
+</body>
+</html>
